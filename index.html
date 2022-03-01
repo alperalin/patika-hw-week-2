@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.scss">
+    <title>Patika HW2 Odevi</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="container__main-title">Patika HW2 Odevi</h1>
+        <div class="container__left">
+            <h2 class="container__sub-title">HESAP EKLE</h2>
+            <form class="form form-user">
+                <input id="userFullName" type="text" class="form__input" name="userFullName" value=""
+                    placeholder="Kullanicinin adi ve soyadi" autocomplete="off" required />
+                <input id="userBalance" type="number" class="form__input" name="userBalance" value=""
+                    placeholder="Kullanicinin bakiyesi" autocomplete="off" required />
+                <button class="form__button" type="submit">Ekle</button>
+            </form>
+
+            <div class="account">
+                <h3 class="account__title">MEVCUT HESAPLAR</h3>
+                <h4 class="account__sub-title account__subtitle--left">Isim Soyisim</h4>
+                <h4 class="account__sub-title account__subtitle--right">Bakiye</h4>
+                <ul class="account__list"></ul>
+            </div>
+        </div>
+        <div class="container__right">
+            <h2 class="container__sub-title">TRANSFER ISLEMI</h2>
+            <form class="form form-transfer">
+                <select class="form__select" name="sender" id="transferSender" required>
+                    <option value="" selected>Gonderici Seciniz</option>
+                </select>
+                <select class="form__select" name="recipient" id="transferRecipient" required>
+                    <option value="" selected>Alici Seciniz</option>
+                </select>
+                <input id="transferAmount" type="number" class="form__input" name="transferValue" value=""
+                    placeholder="Gonderilecek miktar" autocomplete="off" required />
+                <button class="form__button" type="submit">Gönder</button>
+            </form>
+
+            <div class="history">
+                <h3 class="account__title">TARIHCE</h3>
+
+                <div class="filter">
+                    <h4 class="filter__title">Filtrele</h4>
+                    <select class="form__select" name="filterType" id="filterType" required>
+                        <option value="all" selected>Hepsi</option>
+                        <option value="sender">Gonderen</option>
+                        <option value="recipient">Gonderilen</option>
+                    </select>
+                    <select class="form__select" name="filterUser" id="filterUser" required>
+                        <option value="-1" selected>Kullanici Seciniz</option>
+                    </select>
+                </div>
+
+                <ul class="history__list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+// variables
+$bgColor: #fbceb1;
+$borderColor: #666666;
+$borderColor50: rgba(102, 102, 102, 0.5);
+$textColor: #172617;
+$buttonBgColor: #8859b6;
+$buttonDeleteBgColor: #dc2a2a;
+$buttonTextColor: #ffffff;
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100vw;
+	min-height: 600px;
+	height: 100vh;
+	background-color: $bgColor;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	color: $textColor;
+}
+
+h1 {
+	font-size: 32px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+.container {
+	max-width: 80%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	margin: 100px auto 0 auto;
+
+	&__main-title {
+		max-width: 100%;
+		width: 100%;
+		padding: 20px;
+		margin: 0 0 45px 0;
+	}
+
+	&__sub-title {
+		width: 100%;
+		margin: 0 0 15px 0;
+	}
+
+	&__left,
+	&__right {
+		width: 100%;
+		padding: 20px;
+	}
+
+	&__left {
+		max-width: 40%;
+		border-right: 1px solid $borderColor;
+	}
+
+	&__right {
+		max-width: 60%;
+	}
+}
+
+.form {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	&__input,
+	&__select {
+		max-width: calc(50% - 5px);
+		width: 100%;
+		height: 40px;
+		font-family: 'DM Sans', sans-serif;
+		font-size: 18px;
+		border: 1px solid $borderColor;
+		border-radius: 4px;
+		padding: 5px 12px;
+		transition: border-color 300ms ease-in-out;
+
+		&:focus,
+		&:focus-within {
+			border-color: $borderColor50;
+			outline: 0;
+		}
+
+		.form-transfer &,
+		.filter & {
+			max-width: calc(33% - 5px);
+		}
+	}
+
+	&__button {
+		max-width: 150px;
+		width: 100%;
+		background-color: $buttonBgColor;
+		font-family: 'DM Sans', sans-serif;
+		font-size: 18px;
+		color: $buttonTextColor;
+		text-transform: uppercase;
+		border: 1px solid $borderColor;
+		border-radius: 4px;
+		padding: 8px 12px;
+		margin: 10px 0 0 0;
+		cursor: pointer;
+		transition: all 300ms ease-in-out;
+
+		&:hover,
+		&:focus,
+		&:focus-within {
+			background-color: $buttonTextColor;
+			color: $buttonBgColor;
+			border-color: $buttonBgColor;
+			outline: 0;
+		}
+	}
+}
+
+.account,
+.history {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	margin: 50px 0 0 0;
+
+	&__title {
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+
+	&__sub-title {
+		max-width: 50%;
+		width: 100%;
+		margin: 0 0 5px 0;
+	}
+
+	&__list {
+		width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.list-item {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+		padding: 8px 0;
+		margin: 0;
+		border-bottom: 1px solid $borderColor50;
+
+		&:last-of-type {
+			border: 0;
+		}
+
+		&--warning {
+			color: $buttonDeleteBgColor;
+		}
+
+		&__span {
+			display: block;
+			max-width: 50%;
+			width: 100%;
+
+			&:nth-of-type(2) {
+				max-width: 40%;
+			}
+
+			&:only-of-type {
+				max-width: 85%;
+			}
+		}
+
+		&__button {
+			@extend .form__button;
+			max-width: 10%;
+			background-color: $buttonDeleteBgColor;
+			font-size: 16px;
+			padding: 4px;
+			margin: 0;
+
+			&:hover,
+			&:focus,
+			&:focus-within {
+				color: $buttonDeleteBgColor;
+				border-color: $buttonDeleteBgColor;
+			}
+		}
+	}
+}
+
+.filter {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border: 1px solid $borderColor;
+	padding: 15px;
+	margin: 0 0 15px 0;
+	overflow: hidden;
+
+	&__title {
+		max-width: calc(25% - 5px);
+		width: 100%;
+		margin: 0;
+	}
+}
